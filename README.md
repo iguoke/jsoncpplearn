@@ -30,9 +30,24 @@
 	JsonNP
 
 二.JsonCpp
+	Json::Value
+		可以表示所有json类型（int double，string，object，array）
+		类型判断（isNULL，isInt...）
+		类型获取（type）
+		节点获取（[])
+		节点比较
+		节点操作
+	Json::Reader
+		将文本流或者字符串流解析到Json::Value
+		主要使用parse函数
+		可自定义Features	
+	Json::Writer
+		将Json::Value转换成字符流
+		是虚类	
+
 	centos安装python3.6
 		https://blog.csdn.net/hobohero/article/details/54381475
-		安装python3.6可能使用的依赖
+		安装python3.6可能使用的依赖 
 		# yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
 
 		下载python3.6编译安装

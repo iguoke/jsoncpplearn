@@ -7,6 +7,8 @@
 
 #include<iostream>
 #include<json/json.h>
+#include<iostream>
+#include<fstream>
 #include<string>
 using namespace std;
 
@@ -20,10 +22,26 @@ int main()
 	{
 		if(!value["id"].isNull())
 		{
+			//value["id"].type a="";
 			cout<<value["name"].asString()<<endl;
 
 		}
 	}
+
+	Json::FastWriter fw;
+	Json::StyledWriter sw;
+
+	string fstr=fw.write(value);
+	string sstr=sw.write(value);
+
+	ofstream ofs;
+	ofs.open("fast.json");
+	ofs<<fstr;	
+	ofs.close();
+	ofs.open("styled.json");
+	ofs<<sstr;
+	ofs.close();
+
 	return 0;
 }
 
